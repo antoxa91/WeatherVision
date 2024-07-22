@@ -8,12 +8,12 @@
 import UIKit
 
 protocol SelectItemCollectionViewDelegate: AnyObject {
-    func selectItem(index: IndexPath)
+    func selectItem(weatherType: WeatherTypeEnum)
 }
 
 final class WeatherTypeCollectionView: UICollectionView {
     private let categoryLayout = UICollectionViewFlowLayout()
-    private let weatherType = WeatherTypeEnum.allCases
+    private let weatherTypes = WeatherTypeEnum.allCases
     
     weak var cellDelegate: SelectItemCollectionViewDelegate?
     
@@ -50,23 +50,21 @@ final class WeatherTypeCollectionView: UICollectionView {
         let blurView = UIVisualEffectView(effect: blur)
         blurView.frame = self.bounds
         self.backgroundView = blurView
-        randomSelectedItem()
     }
     
     private func randomSelectedItem() {
-        let randomIndex: IndexPath = [0, Int.random(in: 0..<weatherType.count)]
+        let randomIndex: IndexPath = [0, Int.random(in: 0..<weatherTypes.count)]
         DispatchQueue.main.async {
             self.selectItem(at: randomIndex, animated: true, scrollPosition: [.centeredHorizontally])
-            self.cellDelegate?.selectItem(index: randomIndex)
+            self.cellDelegate?.selectItem(weatherType: self.weatherTypes[randomIndex.item])
         }
     }
 }
 
-
 // MARK: - UICollectionViewDataSource
 extension WeatherTypeCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        weatherType.count
+        weatherTypes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,27 +73,24 @@ extension WeatherTypeCollectionView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configure(with: weatherType[indexPath.item])
+        cell.configure(with: weatherTypes[indexPath.item])
         return cell
     }
 }
-
 
 // MARK: - UICollectionViewDelegate
 extension WeatherTypeCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        cellDelegate?.selectItem(index: indexPath)
+        cellDelegate?.selectItem(weatherType: weatherTypes[indexPath.item])
     }
 }
-
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension WeatherTypeCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let weatherType = weatherType[indexPath.item]
-        let categoryFont = UIFont.openSans()
-        let categoryAttributes = [NSAttributedString.Key.font: categoryFont]
+        let weatherType = weatherTypes[indexPath.item]
+        let categoryAttributes = [NSAttributedString.Key.font: UIFont.openSans()]
         let textSize = weatherType.text.size(withAttributes: categoryAttributes)
         
         let width = textSize.width + 20
