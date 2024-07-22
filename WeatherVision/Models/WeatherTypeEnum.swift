@@ -12,9 +12,7 @@ enum WeatherTypeEnum: String, CaseIterable {
     case cloud
     case sun
     case fog
-    case tornado
     case snow
-    case moonWithStars
     
     var text: String {
         switch self {
@@ -28,10 +26,6 @@ enum WeatherTypeEnum: String, CaseIterable {
             return String(localized: "Cloud")
         case .fog:
             return String(localized: "Fog")
-        case .tornado:
-            return String(localized: "Tornado")
-        case .moonWithStars:
-            return String(localized: "Moon & Stars")
         }
     }
     
@@ -47,10 +41,7 @@ enum WeatherTypeEnum: String, CaseIterable {
             return .init(systemName: "cloud.fill")
         case .fog:
             return .init(systemName: "cloud.fog.fill")
-        case .tornado:
-            return .init(systemName: "tornado")
-        case .moonWithStars:
-            return .init(systemName: "moon.stars.fill")
         }
     }
+    
 }
