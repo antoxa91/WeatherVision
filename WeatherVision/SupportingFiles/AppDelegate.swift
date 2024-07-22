@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        window.rootViewController = WeatherViewController()
+        
+        do {
+            let assembly = WeatherViewControllerAssembly(weatherService: WeatherService())
+            window.rootViewController = try assembly.create()
+        } catch {
+            let logger = Logger()
+            logger.error("Не удалось создать CharactersListViewController: \(error.localizedDescription)")
+        }
         self.window = window
+        
         return true
     }
 }

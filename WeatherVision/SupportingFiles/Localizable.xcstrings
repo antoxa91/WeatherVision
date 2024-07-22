@@ -21,16 +21,6 @@
         }
       }
     },
-    "Moon & Stars" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Луна и звезды"
-          }
-        }
-      }
-    },
     "Rain" : {
       "localizations" : {
         "ru" : {
@@ -57,16 +47,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Солнечно"
-          }
-        }
-      }
-    },
-    "Tornado" : {
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Торнадо"
           }
         }
       }
