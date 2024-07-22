@@ -54,12 +54,10 @@ final class WeatherTypeCollectionView: UICollectionView {
     }
     
     private func randomSelectedItem() {
-        guard let random = (0...weatherType.count-1).randomElement() else {
-            return
-        }
+        let randomIndex: IndexPath = [0, Int.random(in: 0..<weatherType.count)]
         DispatchQueue.main.async {
-            self.selectItem(at: [0, random], animated: true, scrollPosition: [.centeredHorizontally])
-            self.cellDelegate?.selectItem(index: [0, random])
+            self.selectItem(at: randomIndex, animated: true, scrollPosition: [.centeredHorizontally])
+            self.cellDelegate?.selectItem(index: randomIndex)
         }
     }
 }

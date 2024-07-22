@@ -11,6 +11,7 @@
 		C51EC9122C4E69EA007FE1EA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EC9112C4E69EA007FE1EA /* WeatherViewController.swift */; };
 		C51EC9172C4E69EC007FE1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51EC9162C4E69EC007FE1EA /* Assets.xcassets */; };
 		C51EC91A2C4E69EC007FE1EA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C51EC9192C4E69EC007FE1EA /* Base */; };
+		C550EF162C4EF2BA00C6430B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF152C4EF2BA00C6430B /* WeatherView.swift */; };
 		C57737772C4E9F3E00A8ADD1 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57737762C4E9F3E00A8ADD1 /* UIView + Extension.swift */; };
 		C57737792C4E9F5500A8ADD1 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57737782C4E9F5500A8ADD1 /* UIFont + Extension.swift */; };
 		C577377B2C4E9FE300A8ADD1 /* OpenSansEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C577377A2C4E9FE300A8ADD1 /* OpenSansEnum.swift */; };
@@ -28,6 +29,7 @@
 		C51EC9162C4E69EC007FE1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51EC9192C4E69EC007FE1EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C51EC91B2C4E69EC007FE1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C550EF152C4EF2BA00C6430B /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		C57737762C4E9F3E00A8ADD1 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		C57737782C4E9F5500A8ADD1 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		C577377A2C4E9FE300A8ADD1 /* OpenSansEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSansEnum.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C5ACF2912C4E944500B98952 /* WeatherTypeCollectionView.swift */,
+				C550EF152C4EF2BA00C6430B /* WeatherView.swift */,
 				C57737832C4EB10400A8ADD1 /* Cells */,
 			);
 			path = Views;
@@ -220,6 +223,7 @@
 				C5ACF2902C4E933800B98952 /* WeatherTypeCollectionViewCell.swift in Sources */,
 				C51EC90E2C4E69EA007FE1EA /* AppDelegate.swift in Sources */,
 				C57737772C4E9F3E00A8ADD1 /* UIView + Extension.swift in Sources */,
+				C550EF162C4EF2BA00C6430B /* WeatherView.swift in Sources */,
 				C5ACF2922C4E944500B98952 /* WeatherTypeCollectionView.swift in Sources */,
 				C577377D2C4EA12600A8ADD1 /* WeatherTypeEnum.swift in Sources */,
 			);
