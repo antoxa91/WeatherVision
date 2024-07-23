@@ -14,9 +14,13 @@
 - `UIKit`
 - `UICollectionView`
 - `Auto Layout`
+- `Core Animation`
+- `Protocols`
+- `Inheritance`
+- `DI`
+- `Delegate`
 
 
 
 ### Скриншоты
 
-# TODO - Обновить и дополнить

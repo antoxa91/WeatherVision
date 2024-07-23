@@ -28,7 +28,7 @@ final class SunAnimator: BaseAnimator {
         cell.emissionLongitude = -.pi / 2
         cell.emissionRange = CGFloat.pi / 4
         cell.zAcceleration = 9.8
-        cell.scale = 0.35
+        cell.scale = 0.3
         cell.spin = 0.1
         cell.spinRange = 0.2
         return cell

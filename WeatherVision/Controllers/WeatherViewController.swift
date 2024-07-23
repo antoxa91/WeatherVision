@@ -37,7 +37,7 @@ final class WeatherViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
         setup()
         setConstraints()
     }

@@ -24,8 +24,8 @@ final class CloudsAnimator: BaseAnimator {
         cell.lifetime = .random(in: 150...180)
         cell.velocityRange = 0.6
         cell.emissionLongitude = .pi
-        cell.scale = .random(in: 0.35...0.5)
-        cell.scaleRange = 0.3
+        cell.scale = .random(in: 0.25...0.4)
+        cell.scaleRange = 0.25
         cell.xAcceleration = -0.05
         cell.yAcceleration = .random(in: 0...0.02)
         return cell
