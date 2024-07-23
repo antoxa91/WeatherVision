@@ -7,22 +7,19 @@
 
 import UIKit
 
-final class SunAnimator {
-    private var emitterLayer: CAEmitterLayer?
+final class SunAnimator: BaseAnimator {
+    init() {
+        super.init(emitterSize: CGSize(width: 1, height: 1),
+                   emitterPosition: CGPoint(x: UIScreen.main.bounds.width, y: 0))
+    }
     
-    private let emitterSize = CGSize(width: 1, height: 1)
-    private let emitterPosition = CGPoint(x: UIScreen.main.bounds.width, y: 0)
-    
-    func configure() -> CAEmitterLayer {
-        let layer = CAEmitterLayer()
+    override func configure() -> CAEmitterLayer {
+        let layer = super.configure()
         layer.emitterShape = .point
-        layer.emitterPosition = emitterPosition
-        layer.emitterSize = emitterSize
-        layer.emitterCells = [createEmitterCell()]
         return layer
     }
     
-    private func createEmitterCell() -> CAEmitterCell {
+    override func createEmitterCell() -> CAEmitterCell {
         let cell = CAEmitterCell()
         cell.contents = UIImage(resource: .sunLights).cgImage
         cell.birthRate = 1
@@ -39,7 +36,7 @@ final class SunAnimator {
 }
 
 //MARK: - WeatherAnimationControllerProtocol
-extension SunAnimator: WeatherAnimationControllerProtocol {
+extension SunAnimator: WeatherAnimatorProtocol {
     func startAnimating(view: UIView) {
         stopAnimating()
         let layer = configure()

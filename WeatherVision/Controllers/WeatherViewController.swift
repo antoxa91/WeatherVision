@@ -8,24 +8,43 @@
 import UIKit
 
 final class WeatherViewController: UIViewController {
+    private let weatherService: WeatherServiceProtocol
+
     // MARK: Private Private UI Properties
     private lazy var weatherTypeCollectionView = WeatherTypeCollectionView()
     
-    // MARK: Life Cycle
-    override func loadView() {
-        view = WeatherView()
+    private lazy var backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = weatherService.getCurrentBackground()
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let weatherAnimators: [WeatherTypeEnum: WeatherAnimatorProtocol]
+    
+    // MARK: Init
+    init(weatherService: WeatherServiceProtocol, weatherAnimators: [WeatherTypeEnum: WeatherAnimatorProtocol]) {
+        self.weatherService = weatherService
+        self.weatherAnimators = weatherAnimators
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .red
         setup()
         setConstraints()
     }
     
     // MARK: Setup
     private func setup() {
-        view.addSubview(weatherTypeCollectionView)
+        view.addSubviews(backgroundImageView, weatherTypeCollectionView)
         weatherTypeCollectionView.cellDelegate = self
     }
     
@@ -35,7 +54,12 @@ final class WeatherViewController: UIViewController {
             weatherTypeCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             weatherTypeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             weatherTypeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            weatherTypeCollectionView.heightAnchor.constraint(equalToConstant: 80)
+            weatherTypeCollectionView.heightAnchor.constraint(equalToConstant: 80),
+            
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
@@ -43,16 +67,17 @@ final class WeatherViewController: UIViewController {
 
 // MARK: - SelectItemCollectionViewDelegate
 extension WeatherViewController: SelectItemCollectionViewDelegate {
-    
-    /// TODO - UIView.animate -будет просто
-    func selectItem(index: IndexPath) {
-        switch index.item {
-        case 0: print(1)
+    func selectItem(weatherType: WeatherTypeEnum) {
+        weatherAnimators[weatherService.getCurrentWeather()]?.stopAnimating()
+        
+        weatherService.setWeather(to: weatherType)
+        
+        UIView.transition(with: backgroundImageView,
+                          duration: 2,
+                          options: [.curveEaseInOut, .transitionCrossDissolve],
+                          animations: { self.backgroundImageView.image = self.weatherService.getCurrentBackground() },
+                          completion: nil)
 
-            
-        default:
-            print(99)
-            break
-        }
+        weatherAnimators[weatherType]?.startAnimating(view: self.view)
     }
 }

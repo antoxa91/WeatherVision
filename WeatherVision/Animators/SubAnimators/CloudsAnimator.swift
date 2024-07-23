@@ -8,23 +8,16 @@
 
 import UIKit
 
-final class CloudsAnimator {
-    private var emitterLayer: CAEmitterLayer?
+final class CloudsAnimator: BaseAnimator {
     
-    private let emitterSize = CGSize(width: UIScreen.main.bounds.width, height: 1)
-    private let emitterPosition = CGPoint(x: UIScreen.main.bounds.width + 300,
-                                          y: UIScreen.main.bounds.height / 4)
-    
-    func configure() -> CAEmitterLayer {
-        let layer = CAEmitterLayer()
-        layer.emitterShape = .line
-        layer.emitterSize = emitterSize
-        layer.emitterPosition = emitterPosition
-        layer.emitterCells = [createEmitterCell()]
-        return layer
+    init() {
+        let emitterSize = CGSize(width: UIScreen.main.bounds.width, height: 1)
+        let emitterPosition = CGPoint(x: UIScreen.main.bounds.width + 300,
+                                      y: UIScreen.main.bounds.height / 3.5)
+        super.init(emitterSize: emitterSize, emitterPosition: emitterPosition)
     }
     
-    private func createEmitterCell() -> CAEmitterCell {
+    override func createEmitterCell() -> CAEmitterCell {
         let cell = CAEmitterCell()
         cell.contents = UIImage(resource: .clouds).cgImage
         cell.birthRate = .random(in: 0.2...0.3)
@@ -40,7 +33,7 @@ final class CloudsAnimator {
 }
 
 // MARK: WeatherAnimationControllerProtocol
-extension CloudsAnimator: WeatherAnimationControllerProtocol {
+extension CloudsAnimator: WeatherAnimatorProtocol {
     func startAnimating(view: UIView) {
         stopAnimating()
         let layer = configure()
@@ -53,4 +46,3 @@ extension CloudsAnimator: WeatherAnimationControllerProtocol {
         emitterLayer = nil
     }
 }
-

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  WeatherService.swift
 //  WeatherVision
 //
 //  Created by Антон Стафеев on 23.07.2024.
@@ -36,11 +36,11 @@ extension WeatherService: WeatherServiceProtocol {
     
     func getCurrentBackground() -> UIImage? {
         switch currentWeather {
-        case .rain: .rainBackground
-        case .cloud: .cloudBackground
-        case .sun: .sunBackground
-        case .fog: .fogBackground
-        case .snow: .snowBackground
+            case .rain: .rainBackground
+            case .cloud: .cloudsBackground
+            case .sun: .sunBackground
+            case .fog: .fogBackground
+            case .snow: .snowBackground
         }
     }
 }

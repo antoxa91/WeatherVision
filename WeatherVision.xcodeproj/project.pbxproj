@@ -11,7 +11,14 @@
 		C51EC9122C4E69EA007FE1EA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EC9112C4E69EA007FE1EA /* WeatherViewController.swift */; };
 		C51EC9172C4E69EC007FE1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51EC9162C4E69EC007FE1EA /* Assets.xcassets */; };
 		C51EC91A2C4E69EC007FE1EA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C51EC9192C4E69EC007FE1EA /* Base */; };
-		C550EF162C4EF2BA00C6430B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF152C4EF2BA00C6430B /* WeatherView.swift */; };
+		C550EF182C4EFAB000C6430B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF172C4EFAB000C6430B /* WeatherService.swift */; };
+		C550EF1A2C4EFE7500C6430B /* SunAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF192C4EFE7500C6430B /* SunAnimator.swift */; };
+		C550EF1C2C4EFE9200C6430B /* CloudsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF1B2C4EFE9200C6430B /* CloudsAnimator.swift */; };
+		C550EF1E2C4EFEA600C6430B /* FogAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF1D2C4EFEA600C6430B /* FogAnimator.swift */; };
+		C550EF202C4EFEB600C6430B /* RainAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF1F2C4EFEB600C6430B /* RainAnimator.swift */; };
+		C550EF232C4F168C00C6430B /* WeatherViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF222C4F168C00C6430B /* WeatherViewControllerAssembly.swift */; };
+		C550EF252C4F29A800C6430B /* SnowAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF242C4F29A800C6430B /* SnowAnimator.swift */; };
+		C550EF282C4F4C9400C6430B /* BaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550EF272C4F4C9400C6430B /* BaseAnimator.swift */; };
 		C57737772C4E9F3E00A8ADD1 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57737762C4E9F3E00A8ADD1 /* UIView + Extension.swift */; };
 		C57737792C4E9F5500A8ADD1 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57737782C4E9F5500A8ADD1 /* UIFont + Extension.swift */; };
 		C577377B2C4E9FE300A8ADD1 /* OpenSansEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C577377A2C4E9FE300A8ADD1 /* OpenSansEnum.swift */; };
@@ -29,7 +36,14 @@
 		C51EC9162C4E69EC007FE1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51EC9192C4E69EC007FE1EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C51EC91B2C4E69EC007FE1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C550EF152C4EF2BA00C6430B /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		C550EF172C4EFAB000C6430B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		C550EF192C4EFE7500C6430B /* SunAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunAnimator.swift; sourceTree = "<group>"; };
+		C550EF1B2C4EFE9200C6430B /* CloudsAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimator.swift; sourceTree = "<group>"; };
+		C550EF1D2C4EFEA600C6430B /* FogAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogAnimator.swift; sourceTree = "<group>"; };
+		C550EF1F2C4EFEB600C6430B /* RainAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimator.swift; sourceTree = "<group>"; };
+		C550EF222C4F168C00C6430B /* WeatherViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerAssembly.swift; sourceTree = "<group>"; };
+		C550EF242C4F29A800C6430B /* SnowAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowAnimator.swift; sourceTree = "<group>"; };
+		C550EF272C4F4C9400C6430B /* BaseAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimator.swift; sourceTree = "<group>"; };
 		C57737762C4E9F3E00A8ADD1 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		C57737782C4E9F5500A8ADD1 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		C577377A2C4E9FE300A8ADD1 /* OpenSansEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSansEnum.swift; sourceTree = "<group>"; };
@@ -70,17 +84,19 @@
 		C51EC90C2C4E69EA007FE1EA /* WeatherVision */ = {
 			isa = PBXGroup;
 			children = (
-				C51EC9212C4E6B18007FE1EA /* Supporting Files */,
-				C57737802C4EB0E000A8ADD1 /* Models */,
+				C51EC9212C4E6B18007FE1EA /* SupportingFiles */,
 				C5ACF2942C4E95CC00B98952 /* Font */,
 				C57737752C4E9F1F00A8ADD1 /* Extensions */,
+				C57737802C4EB0E000A8ADD1 /* Models */,
+				C550EF212C4F15E000C6430B /* Service */,
+				C550EF262C4F495A00C6430B /* Animators */,
 				C57737822C4EB0F600A8ADD1 /* Views */,
 				C57737812C4EB0EF00A8ADD1 /* Controllers */,
 			);
 			path = WeatherVision;
 			sourceTree = "<group>";
 		};
-		C51EC9212C4E6B18007FE1EA /* Supporting Files */ = {
+		C51EC9212C4E6B18007FE1EA /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				C51EC90D2C4E69EA007FE1EA /* AppDelegate.swift */,
@@ -89,7 +105,36 @@
 				C51EC91B2C4E69EC007FE1EA /* Info.plist */,
 				C57737842C4EB22500A8ADD1 /* Localizable.xcstrings */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C550EF212C4F15E000C6430B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C550EF172C4EFAB000C6430B /* WeatherService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C550EF262C4F495A00C6430B /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				C550EF272C4F4C9400C6430B /* BaseAnimator.swift */,
+				C550EF292C4F4C9E00C6430B /* SubAnimators */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
+		C550EF292C4F4C9E00C6430B /* SubAnimators */ = {
+			isa = PBXGroup;
+			children = (
+				C550EF192C4EFE7500C6430B /* SunAnimator.swift */,
+				C550EF1B2C4EFE9200C6430B /* CloudsAnimator.swift */,
+				C550EF1D2C4EFEA600C6430B /* FogAnimator.swift */,
+				C550EF242C4F29A800C6430B /* SnowAnimator.swift */,
+				C550EF1F2C4EFEB600C6430B /* RainAnimator.swift */,
+			);
+			path = SubAnimators;
 			sourceTree = "<group>";
 		};
 		C57737752C4E9F1F00A8ADD1 /* Extensions */ = {
@@ -113,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C51EC9112C4E69EA007FE1EA /* WeatherViewController.swift */,
+				C550EF222C4F168C00C6430B /* WeatherViewControllerAssembly.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				C5ACF2912C4E944500B98952 /* WeatherTypeCollectionView.swift */,
-				C550EF152C4EF2BA00C6430B /* WeatherView.swift */,
 				C57737832C4EB10400A8ADD1 /* Cells */,
 			);
 			path = Views;
@@ -218,14 +263,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57737792C4E9F5500A8ADD1 /* UIFont + Extension.swift in Sources */,
+				C550EF202C4EFEB600C6430B /* RainAnimator.swift in Sources */,
 				C51EC9122C4E69EA007FE1EA /* WeatherViewController.swift in Sources */,
+				C550EF282C4F4C9400C6430B /* BaseAnimator.swift in Sources */,
 				C577377B2C4E9FE300A8ADD1 /* OpenSansEnum.swift in Sources */,
+				C550EF1A2C4EFE7500C6430B /* SunAnimator.swift in Sources */,
 				C5ACF2902C4E933800B98952 /* WeatherTypeCollectionViewCell.swift in Sources */,
 				C51EC90E2C4E69EA007FE1EA /* AppDelegate.swift in Sources */,
+				C550EF182C4EFAB000C6430B /* WeatherService.swift in Sources */,
+				C550EF1E2C4EFEA600C6430B /* FogAnimator.swift in Sources */,
 				C57737772C4E9F3E00A8ADD1 /* UIView + Extension.swift in Sources */,
-				C550EF162C4EF2BA00C6430B /* WeatherView.swift in Sources */,
+				C550EF1C2C4EFE9200C6430B /* CloudsAnimator.swift in Sources */,
 				C5ACF2922C4E944500B98952 /* WeatherTypeCollectionView.swift in Sources */,
 				C577377D2C4EA12600A8ADD1 /* WeatherTypeEnum.swift in Sources */,
+				C550EF252C4F29A800C6430B /* SnowAnimator.swift in Sources */,
+				C550EF232C4F168C00C6430B /* WeatherViewControllerAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +423,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5CD9RDCH3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WeatherVision/Supporting Files/Info.plist";
+				INFOPLIST_FILE = WeatherVision/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Weather Vision";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -401,7 +454,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5CD9RDCH3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WeatherVision/Supporting Files/Info.plist";
+				INFOPLIST_FILE = WeatherVision/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Weather Vision";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

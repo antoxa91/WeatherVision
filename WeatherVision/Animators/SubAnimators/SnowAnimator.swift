@@ -7,23 +7,15 @@
 
 import UIKit
 
-final class SnowAnimator {
+final class SnowAnimator: BaseAnimator {
     
-    private var emitterLayer: CAEmitterLayer?
-    
-    private let emitterSize = CGSize(width: UIScreen.main.bounds.width, height: 1)
-    private let emitterPosition = CGPoint(x: UIScreen.main.bounds.width / 2, y: -10)
-
-    private func configure() -> CAEmitterLayer {
-        let layer = CAEmitterLayer()
-        layer.emitterShape = .line
-        layer.emitterPosition = emitterPosition
-        layer.emitterSize = emitterSize
-        layer.emitterCells = [createEmitterCell()]
-        return layer
+    init() {
+        let emitterSize = CGSize(width: UIScreen.main.bounds.width, height: 1)
+        let emitterPosition = CGPoint(x: UIScreen.main.bounds.width / 2, y: -10)
+        super.init(emitterSize: emitterSize, emitterPosition: emitterPosition)
     }
     
-    private func createEmitterCell() -> CAEmitterCell {
+    override func createEmitterCell() -> CAEmitterCell {
         let cell = CAEmitterCell()
         cell.contents = UIImage(resource: .snowflake).cgImage
         cell.birthRate = .random(in: 20...30)
@@ -38,7 +30,7 @@ final class SnowAnimator {
 }
 
 // MARK: - WeatherAnimationControllerProtocol
-extension SnowAnimator: WeatherAnimationControllerProtocol {
+extension SnowAnimator: WeatherAnimatorProtocol {
     func startAnimating(view: UIView) {
         stopAnimating()
         let layer = configure()

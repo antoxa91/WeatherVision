@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol WeatherAnimationControllerProtocol {
-    func startAnimating(view: UIView)
-    func stopAnimating()
-}
-
 final class RainAnimator {
     private var animator: UIDynamicAnimator?
     private var gravityBehavior = UIGravityBehavior()
@@ -62,7 +57,7 @@ final class RainAnimator {
 }
 
 // MARK: - WeatherAnimationControllerProtocol
-extension RainAnimator: WeatherAnimationControllerProtocol {
+extension RainAnimator: WeatherAnimatorProtocol {
     func startAnimating(view: UIView) {
         stopAnimating()
         
