@@ -23,4 +23,5 @@
 
 
 ### Скриншоты
+![demo](https://github.com/user-attachments/assets/ecf5ffbb-7a58-4df3-a67d-f702e5bf7f4a)
 
