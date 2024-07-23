@@ -1,44 +1,54 @@
 //
-//  Fog.swift
+//  FogAnimator.swift
 //  WeatherVision
 //
-//  Created by Антон Стафеев on 23.07.2024.
+//  Created by Антон Стафеев on 22.07.2024.
 //
-
 
 import UIKit
 
 final class FogAnimator {
-    private lazy var imageFog = UIImage(named: "fog")
     
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        
-        imageView.image = imageFog
-        
-        return imageView
-    }()
+    private var emitterLayer: CAEmitterLayer?
+    /// TODO много общего у аниматоров
+    ///TODO - consts
+    private let emitterSize = CGSize(width: UIScreen.main.bounds.width, height: 1)
+    private let emitterPosition = CGPoint(x: UIScreen.main.bounds.width / 2, y: -10)
+    
+    func configure() -> CAEmitterLayer {
+        let layer = CAEmitterLayer()
+        layer.emitterShape = .line
+        layer.emitterPosition = emitterPosition
+        layer.emitterSize = emitterSize
+        layer.emitterCells = [createEmitterCell()]
+        return layer
+    }
+    
+    private func createEmitterCell() -> CAEmitterCell {
+        let cell = CAEmitterCell()
+        cell.contents = UIImage(resource: .fog).cgImage
+        cell.birthRate = 0.3
+        cell.lifetime = .random(in: 120...150)
+        cell.velocity = .random(in: 0.1...0.3)
+        cell.velocityRange = 0.05
+        cell.emissionLongitude = .pi
+        cell.scale = .random(in: 0.2...0.3)
+        cell.yAcceleration = 0.2
+        return cell
+    }
 }
 
-// MARK: - WeatherAnimationControllerProtocol
+//MARK: - AnimationConfigurable
 extension FogAnimator: WeatherAnimationControllerProtocol {
     func startAnimating(view: UIView) {
-        guard let imageFog else { return }
-        imageView.frame = .init(x: -(imageFog.size.width - view.frame.width),
-                                y: view.frame.height - imageFog.size.height,
-                                width: imageFog.size.width,
-                                height: imageFog.size.height)
-        
-        view.addSubview(imageView)
-        
-        UIView.animate(withDuration: 10, delay: 0, animations: {
-            self.imageView.frame.origin = .init(x: 0, y: self.imageView.frame.origin.y)
-        }, completion: { _ in
-            self.imageView.removeFromSuperview()
-        })
+        stopAnimating()
+        let layer = configure()
+        view.layer.addSublayer(layer)
+        self.emitterLayer = layer
     }
     
     func stopAnimating() {
-        imageView.removeFromSuperview()
+        emitterLayer?.removeFromSuperlayer()
+        emitterLayer = nil
     }
 }
