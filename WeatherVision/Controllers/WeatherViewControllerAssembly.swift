@@ -9,9 +9,11 @@ import UIKit
 
 struct WeatherViewControllerAssembly {
     let weatherService: WeatherServiceProtocol
+    let weatherAnimators: [WeatherTypeEnum: WeatherAnimationControllerProtocol]
     
     func create() throws -> UIViewController {
-        let vc = WeatherViewController(weatherService: weatherService)
+        let vc = WeatherViewController(weatherService: weatherService,
+                                       weatherAnimators: weatherAnimators)
         return vc
     }
 }
